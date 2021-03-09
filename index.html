@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="canonical" href="https://ksdevware.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="KS Dekto - Meet Everyone Together" />
+	<meta property="og:description" content="Ks Dekto is a platform where you can meet with each other" />
+	<meta property="og:url" content="https://ksdevware.com/dekto" />
+	<meta property="og:site_name" content="KS Dekto" />
+	<meta property="article:modified_time" content="2021-01-20T08:09:19+00:00" />
+	<meta property="og:image" content="https://ksdevware.com/wp-content/uploads/2020/12/Pink-and-Blue-Gemini-Icon-Birthday-Twitter-Post.png" />
+	<meta property="og:image:width" content="1600" />
+	<meta property="og:image:height" content="900" />
+  <link rel="icon" href="https://ksdevware.com/wp-content/uploads/2020/12/faveicon2.png" sizes="32x32" />
+
+  <title>KS Dekto - Meet Everyone Together</title>
+
+  <link rel="stylesheet" href="./vendor/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congratulations!</strong><span> You can invite others join this channel by click </span><a href="" target="_blank">here</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div id="success-alert-with-token" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congratulations!</strong><span> Joined room successfully. </span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div id="success-alert-with-token" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congratulations!</strong><span> Joined room successfully. </span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="app__form">
+    <i class="fas fa-times closeBtn"></i>
+    <form id="join-form">
+      <div class="row join-info-group">
+          <div class="col-sm">
+            <p class="join-info-text">Enter Channel Name</p>
+            <input id="channel" type="text" placeholder="enter channel name" required>
+          </div>
+      </div>
+
+      <div class="button-group">
+        <button id="join" type="submit" class="btn btn-primary btn-sm">Join</button>
+        <!-- <button id="screen" type="button" class="btn btn-primary btn-sm" disabled>Screen Share</button>
+        <button id="leave" type="button" class="btn btn-primary btn-sm d-none" disabled>Leave</button> -->
+        <!-- <button id="mute-audio" type="button" class="btn btn-primary btn-sm">Mute Audio</button>
+        <button id="mute-video" type="button" class="btn btn-primary btn-sm">Mute Video</button> -->
+      </div>
+    </form>
+    <div class="copyLink">
+      <p class="join-info-text">Copy Join Link</p>
+      <input type="text" value="" id="myInput">
+
+      <div class="tooltip">
+        <button onclick="myFunction()" class="btn btn-primary copyBtn">
+          <span class="tooltiptext" id="myTooltip">Copy Link</span>
+          Copy Link
+        </button>
+      </div>
+    </div>
+    <div class="row video-group">
+      <div class="col-5">
+        <!-- <p id="local-player-name" class="player-name"></p>
+        <div id="local-player" class="player"></div> -->
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <!-- <div id="remote-playerlist"></div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="mainUser">
+      <div id="local-player" class="mainPlayer"></div>
+    </div>
+    <div class="main__left">
+       <div class="main__videos">
+          <div id="video-grid">
+            <div id="remote-playerlist"></div>
+          </div>
+       </div>
+       <div class="main__controls">
+          <div class="main__controls__block">
+             <div onclick="muteUnmute()" class="main__controls__button main__mute_button">
+                <i class="fas fa-microphone"></i>
+                <span>Mute</span>
+             </div>
+             <div id="muteVideo" class="main__controls__button main__video_button" >
+                <i class="fas fa-video"></i>
+                <span>Stop Video</span>
+             </div>
+          </div>
+          <div class="main__controls__block">
+             <div class="main__controls__button" onclick="myFunction()">
+                <i class="fas fa-copy"></i>
+                <span>Copy link</span>
+             </div>
+             <div class="main__controls__button">
+                <i class="fas fa-user-friends"></i>
+                <span>Participants <span class="per"></span></span>
+             </div>
+             <div class="main__controls__button" onclick="chatToggle()">
+                <i class="fas fa-comment-alt"></i>
+                <span>Chat</span>
+             </div>
+          </div>
+          <div class="main__controls__block">
+             <div class="main__controls__button">
+                <span id="leave" class="leave_meeting">Leave Meeting</span>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="main__right">
+       <div class="main__header">
+          <h6>Chat</h6>
+       </div>
+       <div class="main__chat_window">
+          <ul class="messages">
+             
+          </ul>
+       </div>
+       <div class="main__message_container">
+          <input id="chat_message" type="text" placeholder="Type message here...">
+       </div>
+    </div>
+  </div>
+
+  <script src="./vendor/jquery-3.4.1.min.js"></script>
+  <script src="./vendor/bootstrap.bundle.min.js"></script>
+  <script src="./AgoraRTC_N-4.3.0.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

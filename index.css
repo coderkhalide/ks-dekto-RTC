@@ -1,0 +1,310 @@
+.banner {
+  padding: 0;
+  background-color: #52575c;
+  color: white;
+}
+
+.banner-text {
+  padding: 8px 20px;
+  margin: 0;
+}
+
+
+#join-form {
+  margin-top: 10px;
+}
+
+.tips {
+  font-size: 12px;
+  margin-bottom: 2px;
+  color: gray;
+}
+
+.join-info-text {
+  margin-bottom: 2px;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.player {
+  width: 480px;
+  height: 270px;
+}
+
+.mainPlayer {
+  width: 200px;
+  height: 110px;
+}
+
+.player-name {
+  margin: 8px 0;
+}
+
+#success-alert, #success-alert-with-token {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .player {
+    width: 320px;
+    height: 240px;
+  }
+}
+
+
+
+
+
+
+*{
+  margin: 0;
+  padding: 0
+}
+#video-grid{
+  display: flex;
+  justify-content: center;
+}
+#video-grid video{
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 5px;
+}
+.main {
+  height: 100vh;
+  display: flex;
+}
+
+.main__left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main__right {
+  width: 0px;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.main__videos {
+  flex-grow: 1;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.main__controls {
+  background-color: #1C1E20;
+}
+
+.main__right {
+  background-color: #242324;
+  border-left: 1px solid #3D3D42;
+}
+
+.main__controls {
+  color: #D2D2D2;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.main__controls__block {
+  display: flex;
+}
+
+.main__controls__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.main__controls__button:hover {
+  background-color: #343434;
+  border-radius: 5px;
+}
+
+.main__controls__button i {
+  font-size: 24px;
+}
+
+.main__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__header {
+  padding-top: 5px;
+  color: #F5F5F5;
+  text-align: center;
+}
+
+.main__chat_window {
+  flex-grow: 1;
+  overflow-y: scroll;
+  word-break: break-word;
+}
+
+.messages{
+  color: white;
+  list-style: none;
+}
+
+.main__message_container {
+  padding: 22px 12px;
+  display: flex;
+}
+
+.main__message_container input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: #F5F5F5;
+  outline: none;
+}
+
+.leave_meeting {
+  color: #EB534B;
+}
+
+.unmute, .stop {
+  color: #CC3B33;
+}
+.chat_active {
+  width: 400px;
+}
+li {
+  padding: 0 10px;
+}
+.mainUser {
+  position: fixed;
+  width: 200px;
+  right: 20px;
+  top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#remote-playerlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.app__form {
+  position: fixed;
+  background: #fff;
+  padding: 20px;
+  width: 430px;
+  top: 20px;
+  left: 20px;
+  border-radius: 10px;
+  box-shadow: 17px 13px 20px -10px #ffffff61;
+}
+.app__form p {
+  font-size: 19px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.app__form input {
+  border: 1px solid #000;
+  outline: none;
+  padding: 8px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+#join {
+  background: #000;
+  padding: 9px 26px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  float: right;
+}
+.copyLink button {
+  background: #000;
+  padding: 9px 26px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  float: right;
+}
+
+/* Tooltip */
+.copyLink{
+  display: none;
+  width: 100%;
+}
+.tooltip {
+  position: relative;
+  opacity: 1;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+.de-active{
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: -100%;
+  left: -100%;
+}
+.active{
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
